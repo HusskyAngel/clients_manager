@@ -106,7 +106,7 @@ const CrearClientes = () => {
                         props.touched.confirmPassword
                       }
                     />
-                    <DatePicker selected={startDate} renderCustomHeader={Calendar} onChange={(date) => setStartDate(date)} />
+                    <DatePicker selected={startDate}  onChange={(date) => setStartDate(date)} />
                     <Field
                       as={TextField}
                       label="Image Link"
