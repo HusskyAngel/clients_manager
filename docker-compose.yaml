@@ -1,0 +1,37 @@
+version: "3.3"
+services:
+  db_postgres:
+    image: postgres:14
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env   
+
+        #   app_backend:
+        #    restart: on-failure
+        # build:
+        #context: ./backend
+        #dockerfile: Dockerfile
+        #ports:
+        #- 3001:3001
+        #volumes:
+        #- ./backend/:/app/
+        #command: npm instal && npm start
+        #depends_on:
+        #- db_postgres
+
+        #app_frontend:
+        #restart: on-failure
+        #build:
+        #context: ./frontend
+        #dockerfile: Dockerfile
+        #ports:
+        #- 3000:3000
+        #volumes:
+        #- ./frontend/:/app/
+        #command: npm install && node app.js
+        #depends_on:
+        #- db_postgres
+        #- app_backend
